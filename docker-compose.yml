@@ -1,0 +1,17 @@
+version: "2"
+services:
+  php_playground:
+    image: php-playground-image
+    ports:
+      - "80:80"
+#      - "443:443"
+    volumes:
+      - ./app:/var/www/html
+    environment:
+      SITE_URL: http://localhost
+    networks:
+      - test_network
+
+networks:
+  test_network:
+    external: false
